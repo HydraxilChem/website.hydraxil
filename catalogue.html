@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Request Product Catalogue | Hydraxil Chem</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background:linear-gradient(120deg,#eef3f9,#f8fbff);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.container{
+  width:100%;
+  max-width:900px;
+  background:#fff;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  border-radius:10px;
+  box-shadow:0 20px 40px rgba(0,0,0,.1);
+  overflow:hidden;
+}
+.left{
+  background:linear-gradient(135deg,#145da0,#0b3c6d);
+  color:#fff;
+  padding:50px 35px;
+}
+.left h2{
+  font-size:28px;
+  margin-bottom:15px;
+}
+.left p{
+  font-size:15px;
+  line-height:1.6;
+  opacity:.95;
+}
+.left ul{
+  margin-top:25px;
+  list-style:none;
+}
+.left li{
+  margin-bottom:10px;
+}
+.right{
+  padding:45px 35px;
+}
+.right h3{
+  margin-bottom:20px;
+  font-size:22px;
+  color:#145da0;
+}
+input, textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:14px;
+}
+textarea{resize:none;height:90px}
+button{
+  width:100%;
+  padding:14px;
+  background:#145da0;
+  color:#fff;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+}
+button:hover{background:#0b3c6d}
+#thanks{
+  display:none;
+  text-align:center;
+  margin-top:20px;
+  color:green;
+  font-weight:600;
+}
+@media(max-width:800px){
+  .container{grid-template-columns:1fr}
+}
+</style>
+
+<script>
+function showThanks(){
+  document.getElementById("thanks").style.display="block";
+}
+</script>
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LEFT INFO -->
+  <div class="left">
+    <h2>Hydraxil Chem</h2>
+    <p>
+      Smarter Chemistry for Cleaner Water.  
+      We provide a complete range of water treatment
+      chemicals for industrial applications.
+    </p>
+
+    <ul>
+      <li>✔ RO Antiscalants</li>
+      <li>✔ Descalants</li>
+      <li>✔ Cooling Tower Chemicals</li>
+      <li>✔ Boiler Chemicals</li>
+      <li>✔ Chilling Plant Chemicals</li>
+      <li>✔ 36+ Products</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT FORM -->
+  <div class="right">
+    <h3>Request Product Catalogue</h3>
+
+    <form action="https://wa.me/919558790049" method="get"
+          target="_blank" onsubmit="showThanks()">
+
+      <input type="hidden" name="text"
+      value="Hello Hydraxil Chem, I would like to request the full product catalogue.">
+
+      <input type="text" placeholder="Company Name" required>
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="email" placeholder="Email Address">
+      <textarea placeholder="Your Requirement"></textarea>
+
+      <button type="submit">Request Product Catalogue</button>
+    </form>
+
+    <div id="thanks">
+      <div id="thanks">
+  Thank you for contacting Hydraxil Chem. We will get back to you shortly.
+</div>
+.
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
