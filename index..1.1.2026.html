@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HYDRAXIL CHEM — Complete Catalogue</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3fbfd;
+  --card:#ffffff;
+  --primary:#0073e6;
+  --accent:#00b84d;
+  --muted:#6b7c88;
+}
+*{box-sizing:border-box}
+body{font-family:'Poppins',Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#08314a}
+.header{background:linear-gradient(90deg,var(--primary),#00a86b);color:#fff;padding:22px 20px;display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:80}
+.header img{width:88px;height:88px;object-fit:contain;border-radius:8px;background:#fff;padding:6px}
+.header .brand{font-size:20px;font-weight:700;letter-spacing:0.6px}
+.header .tag{font-size:13px;color:rgba(255,255,255,0.95);margin-top:4px;font-weight:500}
+
+/* Topbar */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:#fff;border-bottom:1px solid #e6eef2;z-index:70}
+.search{flex:1;display:flex;gap:10px;align-items:center}
+.search input{flex:1;padding:12px 14px;border-radius:30px;border:1px solid #d6e6ee;background:#f7fcff}
+.filters{display:flex;gap:8px;align-items:center;margin-left:14px;flex-wrap:wrap}
+.pill{background:#e9f8ff;color:var(--primary);padding:8px 12px;border-radius:20px;font-weight:600;border:1px solid rgba(0,115,230,0.08);cursor:pointer}
+.pill.active{background:var(--primary);color:#fff}
+
+/* content */
+.container{max-width:1180px;margin:28px auto;padding:0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border-radius:12px;padding:12px;border:1px solid #e8f2f7;box-shadow:0 6px 18px rgba(11,35,50,0.04);cursor:pointer;display:flex;flex-direction:column;gap:10px}
+.card img{width:100%;height:170px;object-fit:cover;border-radius:8px;background:#f7fbff;padding:6px}
+.card h4{margin:0;font-size:16px;color:#063047}
+.card p{margin:0;font-size:13px;color:var(--muted);min-height:38px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+.bt{background:var(--primary);color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+.bt.secondary{background:#eef6ff;color:var(--primary);border:1px solid rgba(0,115,230,0.08)}
+
+/* modal */
+.modal{display:none;position:fixed;inset:0;background:rgba(2,6,10,0.6);z-index:90;align-items:center;justify-content:center;padding:18px;overflow:auto}
+.modal .box{background:#fff;border-radius:12px;max-width:980px;width:100%;display:flex;gap:20px;padding:18px}
+.modal .left{flex:0 0 420px}
+.modal .left img{width:100%;height:420px;object-fit:contain;border-radius:8px;background:#f7fbff;padding:14px}
+.modal .right{flex:1;padding:8px;display:flex;flex-direction:column;gap:8px}
+.specs{background:#fbfdff;padding:12px;border-radius:8px;border:1px dashed #e6f3fb;margin-top:8px}
+.specs b{color:#063047}
+.closebtn{background:#fff;border-radius:999px;padding:8px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #eee;cursor:pointer}
+
+/* footer */
+.footer{background:#012235;color:#bfe6ff;padding:26px 18px;margin-top:26px}
+.footer .wrap{max-width:1180px;margin:auto;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+.footer .col{flex:1;min-width:220px}
+.small{font-size:13px;color:#cfeffd;opacity:0.95}
+
+/* floating whatsapp */
+.whatsapp-float{position:fixed;right:20px;bottom:20px;background:var(--accent);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,0.18);z-index:120}
+.whatsapp-float img{width:28px;height:28px}
+
+/* responsive */
+@media(max-width:880px){
+  .modal .box{flex-direction:column}
+  .modal .left{flex:unset}
+  .modal .left img{height:260px}
+}
+.category-title{margin:18px 0 6px;color:#064055;font-size:18px}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img src="799963_18700-NRVXL3..png" alt="Hydraxil Logo">
+  <div>
+    <div class="brand">HYDRAXIL CHEM</div>
+    <div class="tag">Smarter Chemistry for Cleaner Water</div>
+  </div>
+</header>
+
+<div class="topbar">
+  <div class="search">
+    <input id="search" placeholder="Search products, e.g. RO Antiscalant or 1935A" />
+    <div class="filters" id="filters">
+      <div class="pill active" data-cat="all">All</div>
+      <div class="pill" data-cat="ro">RO Antiscalant</div> 
+      <div class="pill" data-cat="descaler">Descalant</div>
+      <div class="pill" data-cat="cooling">Cooling Tower</div>
+      <div class="pill" data-cat="Boiler Chemicals">Boiler Chemicals</div>
+      <div class="pill" data-cat="chill">Chilling Plant</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center">
+    <a class="bt secondary" href="#contact">Contact</a>
+    <a class="bt" href="#contact">Enquire</a>
+  </div>
+</div>
+
+<main class="container">
+  <section>
+    <h2 style="color:#063047;margin:0 0 12px">Products Catalogue</h2>
+
+    <!-- RO Antiscalant -->
+    <div class="category-title">RO Antiscalant </div> 
+    
+    <div class="grid" id="grid-ro"></div>
+
+    <!-- Descalant -->
+    <div class="category-title">Descalant</div>
+    <div class="grid" id="grid-descaler"></div>
+
+    <!-- Cooling Tower -->
+    <div class="category-title">Cooling Tower Chemicals</div>
+    <div class="grid" id="grid-cooling"></div>
+
+    <!-- Boiler -->
+    <div class="category-title">Boiler Chemicals</div>
+    <div class="grid" id="grid-boiler"></div>
+
+    <!-- Chilling -->
+    <div class="category-title">Chilling Plant Chemicals</div>
+    <div class="grid" id="grid-chill"></div>
+
+  </section>
+</main>
+
+<!-- Modal area -->
+<div id="modal" class="modal" onclick="closeModal()">
+  <div class="box" onclick="event.stopPropagation()">
+    <div class="left"><img id="modalImg" src="https://via.placeholder.com/420x420"></div>
+    <div class="right">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="modalTitle" style="margin:0;color:#064055">Product Name</h3>
+        <button class="closebtn" onclick="closeModal()">✕</button>
+      </div>
+      <p id="modalShort" style="margin:6px 0;color:var(--muted)"></p>
+      <div class="specs" id="modalSpecs"></div>
+      <div style="margin-top:auto;display:flex;gap:10px">
+        <a id="enqBtn" class="bt" href="#">Enquire Now</a>
+        <a class="bt secondary" href="WHATSAPP.HTML">Need Tech Help</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- whatsapp float -->
+<a class="whatsapp-float" id="whats" href="https://wa.me/919558790049" target="_blank" title="Chat on WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+</a>
+
+<footer class="footer" id="contact">
+  <div class="wrap">
+
+    <!-- Company Info -->
+    <div class="col">
+      <h3 style="margin:0 0 8px">HYDRAXIL CHEM</h3>
+      <div class="small">
+        Smarter Chemistry for Cleaner Water<br/>
+        Phone: <a href="tel:+919558790049">+91 9558790049</a><br/>
+        Email: <a href="mailto:hydraxil1205@gmail.com">hydraxil1205@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="col">
+      <h4 style="margin:0 0 8px">Quick Links</h4>
+      <div class="small">
+        <a href="product.html">Products</a> •
+        <a href="about.html">About</a> •
+        <a href="contact.html">Contact</a> •
+        <a href="INSTAGRAM.HTML">Instagram</a> •
+        <a href="FACEBOOK.HTML">Facebook</a>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="col">
+      <h4 style="margin:0 0 10px">Address</h4>
+      <div class="small">Vapi Gunjan 396195</div>
+    </div>
+
+  </div>
+
+  <!-- ONLY COPYRIGHT CENTER -->
+  <div style="text-align:center; margin-top:18px;">
+    © 2025 HYDRAXIL CHEM. All Rights Reserved.
+  </div>
+
+</footer>
+
+
+<script>
+// Product arrays (Hydraxil branding)
+const roProducts = [
+  {id:102, title:"Hydraxil-1932  ", short:"Food-grade RO antiscalant effective against scaling salts.",  img: "RO ANTISCALANT(FOOD GRADE) (2).jpg", specs:{ "pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"35/50kgs","MOQ":"35 kg","Application":"RO Antiscalant","Key Features":["Food grade","Effective","Biodegradable"] } }, 
+  {id:102, title:"Hydraxil-1932A", short:"Food gradeHigh silica RO antiscalant; prevents CaCO3/CaSO4/SiO2 scaling.", img:"RO ANTISCALANT(FOOD GRADE) (2).jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"35/50kgs","MOQ":"35 kg","Application":"RO Antiscalant","Key Features":["Controls silica scaling ","Stabilizes high-recovery RO trains","Compatible with membranes"]} },
+  {id:103, title:"Hydraxil H-1934 ", short:"Controls silica scaling scaling to stabilize high-recovery RO trains..", img:"RO ANTISCALANT HIGH silica.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"35/50kgs","MOQ":"35 kg","Application":"RO Antiscalant","Key Features":["Very effective at high silica & hardness","Stabilizes high-recovery RO trains","Compatible with membranes"]} },
+  {id:104, title:"Hydraxil – 1934A", short:"Concentrated formula; very effective at high silica & hardness; low dosage; compatible with membranes..", img:"RO ANTISCALANT HIGH TDS.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"RO Descaler","Key Features":["Very effective at high silica & hardness","Low dosage","Compatible with membranes"]} },
+  {id:105, title:"Hydraxil -197", short:"RO descaler removing hard deposits and increasing membrane life.", img:"RO ANTISCALANT RO DESCALING.jpg2.jpg", specs:{"pH Level":"11.0","Form":"Liquid","Color":"Yellowish","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"RO Antiscalant","Key Features":["Removes deposits","Extends life","Safe cleaning"]} },
+  {id:106, title:"Hydraxil – 197A", short:"Biodegradable antiscalant safe for RO membranes.", img:"RO ANTISCALANT antiscalant  FOR RO SYSTEM.jpg", specs:{"pH Level":"10.5","Form":"Liquid","Color":"Yellowish","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"RO Antiscalant","Key Features":["Safe for membranes","Biodegradable","Cost effective"]} },
+  {id:107, title:"Hydraxil – 199", short:"Low-dosage RO antiscalant for efficient cleaning and protection..", img:"RO ANTISCALANT antiscalant  FOR RO SYSTEM.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"RO Descaler","Key Features":["Low dosage","Fast cleaning","Membrane safe"]} },
+  {id:108, title:"Hydraxil – 199A", short:"Acidic RO descaler safe for membranes and fast cleaning..", img:"RO ANTISCALANT RO DESCALING.jpg", specs:{"pH Level":"2.0","Form":"Liquid","Color":"Water White","Packing":"35/50kgs","MOQ":"35 kg","Application":"RO Antiscalant","Key Features":["Acidic","Safe","Effective"]} }
+];
+
+const descalerProducts = [
+  {id:201,title:"Hydraxil – 221", short:"Non-corrosive descaling chemical safe for MS & Copper. packing copper.", img:"HYDRAXIL DESCALNT CAN/Descalant DESCALING CHEMICAL NON-CORROSIVE.png", specs:{"pH Level":"SS.","Form":"Liquid","Color":"2.0","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Descalant","Key Features":["True","35.0 Non-corrosive"]}},
+  {id:202,title:"Hydraxil – 224", short:"Low-fuming descaler for fast cleaning and safe handling..", img:"HYDRAXIL DESCALNT CAN/RO Descalant Descaling Chemical.jpg", specs:{"pH Level":"2.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Descalant","Key Features":["Fast cleaning","Safe to handle","Low fuming"]}},
+  {id:203,title:"Hydraxil – 229", short:"Alkaline descaler softening hard scale before acid cleaning.", img:"HYDRAXIL DESCALNT CAN/RO Descalant Scale Softner (Before Descaling).jpg", specs:{"pH Level":"11.0","Form":"Liquid","Color":"Light Yellow","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Descalant","Key Features":["Alkaline","Acid-free","Safe for metal"]}},
+  {id:204,title:"Hydraxil – 602", short:"Non-corrosive cleaner for HVAC and aluminium coils.", img:"HYDRAXIL DESCALNT CAN/RO Descalant  aluminium coils.  cleaner Non-corrosive.jpg", specs:{"pH Level":"2.0","Form":"Liquid","Color":"Viscous Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Descalant","Key Features":["Safe for aluminium","Fast cleaning","HVAC use"]}}
+];
+
+const coolingProducts = [
+  {id:301,title:"Hydraxil – 221", short:"Alkalinity scavenger reducing scaling tendency and improving cleaning..", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals Alkalinity scavenger.jpg", specs:{"pH Level":"2.0","Form":"Liquid","Color":"Brown","Packing":"45kgs Carboy","MOQ":"45 kg","Application":"Cooling Tower","Key Features":["Reduces pH","Improves chemical effectiveness","Cleans transfer surfaces"]}},
+    {id:301,title:"Hydraxil – 301", short:"Non-foaming inhibitor effective up to pH 8.3 for clean surfaces...", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals Scale & corrosion inhibitor 1.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Brown","Packing":"45kgs Carboy","MOQ":"45 kg","Application":"Cooling Tower","Key Features":["Reduces pH","Improves chemical effectiveness","Cleans transfer surfaces"]}},
+
+  {id:302,title:"Hydraxil – 504", short:"Broad-spectrum microbiocide effective against algae, fungi & bacteria.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals microbiocide  5.jpg", specs:{"pH Level":"fungi","Form":"Liquid","Color":"6.0","Packing and bacteria":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["35.0. Kills microorganisms"]}},
+  {id:303,title:"Hydraxil – 505", short:"Oxidizing microbiocide for rapid kill of microorganisms.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals microbiocide  5.jpg", specs:{"pH Level":"9.0","Form":"Liquid","":"50/35kgs Carboy ","MOQ":"35 kg ","Application":"Cooling Tower","Key Features":["Non-foaming","Controls scale","Clean surfaces"]}},
+    {id:304,title:"Hydraxil – 505A", short:"Inhibitor effective at high TDS for deposit prevention and heat transfer.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals Scale & corrosion inhibitor 1.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Prevents calcium-silicate deposits","Protects metal surfaces","Improves transfer"]}},
+  {id:305,title:"Hydraxil – 506", short:"Non-oxidizing microbiocide effective across wide pH range.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals microbiocide  5.jpg", specs:{"pH Level":"8.0","Form":"Liquid","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Effective across wide pH","Algae/bacteria control"]}},
+  {id:305,title:"Hydraxil – 506A", short:"Multi-polymer scale inhibitor effective at high TDS and hardness.e.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals Scale & corrosion inhibitor 1.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Effective at high hardness","Reduces maintenance"]}},
+
+  {id:305,title:"Hydraxil – 507", short:"Non-oxidizing microbiocide effective across wide pH range.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals microbiocide  5.jpg", specs:{"pH Level":"8.0","Form":"Liquid","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Effective across wide pH","Algae/bacteria control"]}},
+  {id:306,title:"Hydraxil – 508", short:"Non foaming .", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals microbiocide  2.jpg", specs:{"pH Level":"broad-spectrum microbiocide for cooling towers.","Form":"Water White","Color":"35/50kgs Carboy","Packing":"8.0","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["35.0","Prevents microbial growth","Non-foaming"]}},
+  {id:307,title:"Hydraxil – 590", short:"Non-oxidizing microbiocide effective over wide pH.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals microbiocide  4.jpg", specs:{"pH Level":"biodegradable","Form":"Viscous Milky White","Color":"50/35kgs Carboy","Packing":"8.8","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["35.0","Non-oxidizing","Biodegradable"]}},
+  {id:308,title:"Hydraxil – 591", short:"Corrosion inhibitor that removes acidic gases and protects metals..", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals Corrosion inhibitor.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Corrosion control","Gas removal","Extends life"]}},
+  {id:309,title:"Hydraxil – 903", short:"Dispersant keeping suspended solids under control in cooling systems.", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals dispersant.jpg", specs:{"pH Level":"6.0","Form":"Liquid","Color":"Milky White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Controls solids","Protects metal surfaces","Improves transfer"]}},
+  {id:310,title:"Hydraxil – 920", short:"Scale & corrosion inhibitor reducing power use and extending cooling system life..", img:"HYDRAXIL Cooling Tower Chemicals CAN/Cooling Tower Chemicals Scale & corrosion inhibitor 1.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Cooling Tower","Key Features":["Prevents deposits","Reduces maintenance"]}} 
+]
+;
+
+
+const boilerProducts = [
+  {id:40,title:"Hydraxil – 301", short:"Low-pH inhibitor that removes alkalinity and deposits to protect boilers.", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals Anti Foaming compound.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Reduces alkalinity","Removes deposits","Corrosion protection"]}},
+  {id:402,title:"Hydraxil – 315", short:"Anti-foaming compound that improves efficiency and prevents carryover.", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals Anti Foaming compound.jpg", specs:{"pH Level":"8.0","Form":"Liquid","Color":"Milky White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Prevents foaming","Improves heat transfer","Ensures quality output"]}},
+  {id:403,title:"Hydraxil – 316", short:"pH booster and alkalinity builder to extend boiler life and reduce costs...", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals scale & Corrosion Inhibitor.jpg", specs:{"pH Level":"3.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Reduces alkalinity","Improves heat transfer","Ensures quality output"]}},
+  {id:404,title:"Hydraxil – 319", short:"Alkalinity-buster corrosion inhibitor for low & medium pressure boilers..", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals scale & Corrosion Inhibitor.jpg", specs:{"pH Level":"10.5","Form":"Liquid","Color":"Golden yellow or Brown","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Removes hard deposits","Corrosion protection","Alkalinity control"]}},
+  {id:405,title:"Hydraxil – 325 ", short:"Alkalinity-buster scale inhibitor for low & medium pressure boilers..", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals scale & Corrosion Inhibitor.jpg", specs:{"pH Level":"10.5","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Removes hard deposits","Corrosion protection","Alkalinity control"]}},
+  {id:406,title:"Hydraxil – 327", short:"Alkalinity-buster scale inhibitor for low & medium pressure boilers.", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals scale & Corrosion Inhibitor.jpg", specs:{"pH Level":"10.5","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Removes hard deposits","Corrosion protection","Alkalinity control"]}},
+  {id:407,title:"Hydraxil – 327A", short:"Neutral-pH inhibitor for deposit removal and boiler corrosion protection.", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals scale & Corrosion Inhibitor.jpg", specs:{"pH Level":"7.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Removes hard deposits","Protects from corrosion","Neutral pH"]}},
+  {id:408,title:"Hydraxil – 331", short:"Sludge conditioner to prevent deposits and improve heat transfer.", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals Sludge Conditioner + condensate treatment.jpg", specs:{"pH Level":"8.0","Form":"Liquid","Color":"Water White","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Keeps sludge soft","Prevents tube failure","Improves efficiency"]}},
+  {id:409,title:"Hydraxil – 345", short:"Catalyzed oxygen scavenger that extends equipment life and efficiency..", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals catalyzed Oxygen Scavenger.jpg", specs:{"pH Level":"9.0","Form":"Liquid","":"","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Removes dissolved oxygen","Prevents corrosion","Extends equipment life"]}},
+  {id:410,title:"Hydraxil – 350", short:"Volatile amine-based scavenger protecting boilers and condensate lines..", img:"HYDRAXIL Boiler Chemicals can/Boiler Chemicals amine based oxygen scavenger.jpg", specs:{"pH Level":"10.0","Form":"Liquid","":"","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Boiler","Key Features":["Eco-friendly","Reduces maintenance cost","Protects condensate lines"]}}
+]; 
+
+const chillProducts = [
+  {id:501,title:"Hydraxil – 991", short:"Scale inhibitor keeping exchangers clean and energy efficient.", img:"Chilling Plant Chemical can/Chilling Plant Chemical scale Inhibitor for Closed Cooling.jpg", specs:{"pH Level":"10.5","Form":"Liquid","":"","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Chilling Plant","Key Features":["Prevents scale","Saves energy","Extends life"]}},
+  {id:502,title:"Hydraxil – 996 Corrosion Inhibitor", short:"Corrosion inhibitor protecting alloys with no heavy metals.", img:"Chilling Plant Chemical can/Chilling Plant Chemical scale Inhibitor for Closed Cooling.jpg", specs:{"pH Level":"10.5","Form":"Liquid","Color":"Brown or Golden Yellow","Packing":"50/35kgs Carboy","MOQ":"35 kg","Application":"Chilling Plant","Key Features":["Prevents corrosion","Alloy protection","Eco-friendly"]}}
+];
+
+// helper to render cards into a container
+function renderGrid(containerId, items){
+  const container = document.getElementById(containerId);
+  items.forEach(p=>{
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<img src="${p.img}" alt="${p.title}"><h4>${p.title}</h4><p>${p.short}</p>
+      <div class="meta"><button class="bt" onclick="openProduct(${p.id})">View Details</button>
+      <button class="bt secondary" onclick="enquire('${p.title}')">Enquire</button></div>`;
+    container.appendChild(card);
+  });
+}
+
+renderGrid('grid-ro', roProducts);
+renderGrid('grid-descaler', descalerProducts);
+renderGrid('grid-cooling', coolingProducts);
+renderGrid('grid-boiler', boilerProducts);
+renderGrid('grid-chill', chillProducts);
+
+// open modal by id lookup across all arrays
+function findProductById(id){
+  const all = [...roProducts, ...descalerProducts, ...coolingProducts, ...boilerProducts, ...chillProducts];
+  return all.find(p=>p.id===id);
+}
+
+function openProduct(id){
+  const p = findProductById(id);
+  if(!p) return;
+  document.getElementById('modalImg').src = p.img;
+  document.getElementById('modalTitle').innerText = p.title;
+  document.getElementById('modalShort').innerText = p.short;
+  const specs = p.specs;
+  let html = '';
+  for(const k in specs){
+    if(k==='Key Features'){
+      html += '<b>'+k+':</b><ul>';
+      specs[k].forEach(it=> html += '<li>'+it+'</li>');
+      html += '</ul>';
+    } else {
+      html += '<p><b>'+k+':</b> '+specs[k]+'</p>';
+    }
+  }
+  document.getElementById('modalSpecs').innerHTML = html;
+  document.getElementById('enqBtn').href = 'mailto:info@hydraxilchem.com?subject=Enquiry:'+encodeURIComponent(p.title);
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){ document.getElementById('modal').style.display='none' }
+function enquire(title){ window.location.href='mailto:info@hydraxilchem.com?subject=Enquiry:'+encodeURIComponent(title) }
+
+// search across all categories
+document.getElementById('search').addEventListener('input', (e)=>{
+  const q = e.target.value.toLowerCase().trim();
+  const all = [...roProducts, ...descalerProducts, ...coolingProducts, ...boilerProducts, ...chillProducts];
+  const filtered = all.filter(p=> p.title.toLowerCase().includes(q) || p.short.toLowerCase().includes(q));
+  // clear and render
+  ['grid-ro','grid-descaler','grid-cooling','grid-boiler','grid-chill'].forEach(id=>document.getElementById(id).innerHTML='');
+  // group back into categories
+  filtered.forEach(p=>{
+    if(p.id>=101 && p.id<200) document.getElementById('grid-ro').appendChild(createCard(p));
+    else if(p.id>=201 && p.id<300) document.getElementById('grid-descaler').appendChild(createCard(p));
+    else if(p.id>=301 && p.id<400) document.getElementById('grid-cooling').appendChild(createCard(p));
+    else if(p.id>=401 && p.id<500) document.getElementById('grid-boiler').appendChild(createCard(p));
+    else if(p.id>=501 && p.id<600) document.getElementById('grid-chill').appendChild(createCard(p));
+  });
+  if(q==='') { renderGrid('grid-ro',roProducts); renderGrid('grid-descaler',descalerProducts); renderGrid('grid-cooling',coolingProducts); renderGrid('grid-boiler',boilerProducts); renderGrid('grid-chill',chillProducts);}
+});
+
+function createCard(p){
+  const card = document.createElement('div');
+  card.className='card';
+  card.innerHTML = `<img src="${p.img}" alt="${p.title}"><h4>${p.title}</h4><p>${p.short}</p>
+      <div class="meta"><button class="bt" onclick="openProduct(${p.id})">View Details</button>
+      <button class="bt secondary" onclick="enquire('${p.title}')">Enquire</button></div>`;
+  return card;
+}
+
+// category pills
+document.querySelectorAll('.pill').forEach(el=>{
+  el.addEventListener('click', ()=>{
+    document.querySelectorAll('.pill').forEach(x=>x.classList.remove('active'));
+    el.classList.add('active');
+    const cat = el.dataset.cat;
+    // hide/show sections
+ document.querySelectorAll('.category-title').forEach(t=>t.style.display='block');
+    ['grid-ro','grid-descaler','grid-cooling','grid-boiler','grid-chill'].forEach(id=>document.getElementById(id).style.display='grid');
+    if(cat==='all'){ return; }
+    if(cat==='ro'){ hideExcept('grid-ro'); }
+    if(cat==='descaler'){ hideExcept('grid-descaler'); }
+    if(cat==='cooling'){ hideExcept('grid-cooling'); }
+    if(cat==='boiler'){ hideExcept('grid-boiler'); }
+    if(cat==='chill'){ hideExcept('grid-chill'); }
+  });
+});
+function hideExcept(id){
+  const ids = ['grid-ro','grid-descaler','grid-cooling','grid-boiler','grid-chill'];
+  ids.forEach(i=>{ if(i===id) document.getElementById(i).style.display='grid'; else document.getElementById(i).style.display='none'; });
+  // hide titles accordingly
+  const titles = document.querySelectorAll('.category-title');
+  titles.forEach((t,idx)=>{ t.style.display = (ids[idx]===id)?'block':'none'; });
+}
+
+</script>
+</body>
+</html>
